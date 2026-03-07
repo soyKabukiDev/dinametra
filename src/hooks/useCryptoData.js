@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getMarketData } from "../services/api";
 
-export const useCryptoData = (limit = 10) => {
+export const useCryptoData = (limit = 5) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);

@@ -6,7 +6,8 @@ import {
   LineElement,
   BarElement,
   Tooltip,
-  Legend
+  Legend,
+  Filler
 } from "chart.js";
 
 ChartJS.register(
@@ -16,7 +17,8 @@ ChartJS.register(
   LineElement,
   BarElement,
   Tooltip,
-  Legend
+  Legend,
+  Filler
 );
 
 // Global configuration for dark mode
