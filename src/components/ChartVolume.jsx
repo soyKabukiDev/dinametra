@@ -53,8 +53,8 @@ const ChartVolume = ({ data }) => {
   };
 
   return (
-    <div className="chart-container">
-      <h3>Vol Crypto</h3>
+    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-xl backdrop-blur-md flex flex-col justify-center transition-transform duration-300 hover:-translate-y-1">
+      <h3 className="text-xl font-semibold mb-4 text-emerald-400">Volumen de Mercado</h3>
       <Bar data={chartData} options={options} />
     </div>
   );

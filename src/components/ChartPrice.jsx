@@ -51,8 +51,8 @@ const ChartPrice = ({ data }) => {
   };
 
   return (
-    <div className="chart-container">
-      <h3>Precio Crypto</h3>
+    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-xl backdrop-blur-md flex flex-col justify-center transition-transform duration-300 hover:-translate-y-1">
+      <h3 className="text-xl font-semibold mb-4 text-blue-400">Precio Crypto</h3>
       <Line data={chartData} options={options} />
     </div>
   );
