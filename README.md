@@ -1,16 +1,51 @@
-# React + Vite
+# Crypto Dashboard Dinametra
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un dashboard interactivo que visualiza datos en tiempo real de criptomonedas utilizando la API pública de CoinGecko.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Visualización de Datos:** Gráficos de línea para precios y de barras para volumen de mercado usando `Chart.js` y `react-chartjs-2`.
+- **Filtros Dinámicos:** Selector para consultar el Top 10, Top 25, o Top 50 de criptomonedas.
+- **Diseño Responsivo:** Creado con CSS Grid y Flexbox. Presenta un moderno estilo *Glassmorphism* y Dark Mode.
+- **Calidad del Código y Arquitectura:** Estructura modular, separando responsabilidades vía Custom Hooks para *data-fetching*, servicios para la API, y componentes UI presentacionales puros.
+- **Accesibilidad:** Uso de directivas ARIA para el uso conveniente mediante lectores de pantalla y navegación por teclado.
+- **Testing:** Entorno configurado con Vitest y React Testing Library garantizando la renderización y funcionamiento correcto de los componentes críticos.
 
-## React Compiler
+## Instrucciones de Instalación
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Clonar el repositorio.
+2. Asegurar que tienes Node.js instalado.
+3. Instalar las dependencias en la raíz del proyecto:
+   ```bash
+   npm install
+   ```
+4. Levantar el servidor de desarrollo Vite:
+   ```bash
+   npm run dev
+   ```
 
-## Expanding the ESLint configuration
+## Capturas de Pantalla
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+*(Nota para el usuario: Incluye aquí debajo las capturas de imagen de tu dashboard usando el formato `![Dashboard](link)` una vez lo subas a GitHub)*
+
+- ![Carga Inicial]()
+- ![Filtros Aplicados Top 100]()
+- ![Uso en Dispositivo Móvil]()
+
+## Ejecución de Pruebas
+
+Para correr las pruebas unitarias usando Vitest:
+```bash
+npm run test
+```
+
+## Enfoque Adoptado
+
+- **Gestión de Estado y Ciclo de Vida**: Se utiliza un Custom Hook (`useCryptoData`) dedicado a la obtención de datos para evitar re-renderizaciones innecesarias. Se añadió el patrón `isMounted` en el hook local para evitar fugas de memoria o actualizaciones de estado después de que un componente haya sido desmontado. 
+- **Optimización y Prevención de Errores (Debouncing y HTTP 429)**: Al notar que la API gratuita de CoinGecko tiene límites drásticos de peticiones (Rate Limit), se programó un `setTimeout` de 500ms en el Hook. De esta manera, si un usuario spamea el cambio de filtros (Ej. 10 -> 25 -> 50) muy rápidamente, React limpia los *Timeouts* anteriores y asegura hacer **una sola llamada a la red**, previniendo ser bloqueados por código 429.
+- **Componentes Ciegos (*Dumb Components*)**: Los componentes `ChartPrice` y `ChartVolume` se transformaron en componentes de presentación que reciben toda su data por "props", y delegan la lógica de *fetch* al `Dashboard` que actúa como contenedor principal. Esto mejora mucho el rendimiento. Además utilizan funciones nativas de JS (`Intl.NumberFormat`) para formatear los números gigantes en monedas y billones entendibles.
+- **Herramientas Modernas**: Vite sobre React para rapidez al codificar, renderizado responsivo con CSS nativo *Glassmorphism*, y reemplazo del entorno antiguo de Jest por **Vitest + React Testing Library** interactuando directamente sobre simulaciones del DOM de usuario.
+
+## Posibles Mejoras a Futuro
+- Manejar la paginación para expandir infinitamente la cantidad de datos que provee la API libre de CoinGecko de forma optimizada.
+- Internacionalización (i18n).
