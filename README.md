@@ -26,11 +26,11 @@ Un dashboard interactivo que visualiza datos en tiempo real de criptomonedas uti
 
 ## Capturas de Pantalla
 
-*(Nota para el usuario: Incluye aquí debajo las capturas de imagen de tu dashboard usando el formato `![Dashboard](link)` una vez lo subas a GitHub)*
+*(Nota para el usuario: Guarda las capturas de imagen de tu dashboard en la carpeta `public/screenshots` con los nombres indicados abajo, una vez lo subas a GitHub)*
 
-- ![Carga Inicial]()
-- ![Filtros Aplicados Top 100]()
-- ![Uso en Dispositivo Móvil]()
+- ![Carga Inicial](./public/screenshots/1-carga-inicial.png)
+- ![Filtros Aplicados](./public/screenshots/2-filtros.png)
+- ![Uso en Dispositivo Móvil](./public/screenshots/3-movil.png)
 
 ## Ejecución de Pruebas
 
