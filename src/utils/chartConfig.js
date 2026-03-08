@@ -21,7 +21,6 @@ ChartJS.register(
   Filler
 );
 
-// Global configuration for dark mode
 ChartJS.defaults.color = "#94a3b8";
 ChartJS.defaults.scale.grid.color = "rgba(255, 255, 255, 0.05)";
 ChartJS.defaults.font.family = "'Inter', sans-serif";
