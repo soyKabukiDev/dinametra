@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://api.coingecko.com/api/v3";
+const API_URL = "/api/coingecko";
 
 export const getMarketData = async (limit = 5) => {
     try {
