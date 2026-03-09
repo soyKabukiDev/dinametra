@@ -1,11 +1,11 @@
 # Crypto Dashboard Dinametra
 
-Un dashboard interactivo que visualiza datos en tiempo real de criptomonedas utilizando la API pública de CoinGecko.
+Un dashboard interactivo que visualiza datos en tiempo real de criptomonedas utilizando la API pública de **CoinLore**.
 
 ## Características
 
 - **Visualización de Datos:** Gráficos de línea para precios y de barras para volumen de mercado usando `Chart.js` y `react-chartjs-2`.
-- **Filtros Dinámicos:** Selector para consultar el Top 10, Top 25, o Top 50 de criptomonedas.
+- **Filtros Dinámicos:** Selector para consultar el **Top 5, 10, 25, 50, o 100** de criptomonedas con actualización inmediata.
 - **Diseño Responsivo:** Creado íntegramente con **Tailwind CSS**. Presenta un moderno estilo *Glassmorphism* y Dark Mode.
 - **Calidad del Código y Arquitectura:** Estructura modular, separando responsabilidades vía Custom Hooks para *data-fetching*, servicios para la API, y componentes UI presentacionales puros.
 - **Accesibilidad:** Uso de directivas ARIA para el uso conveniente mediante lectores de pantalla y navegación por teclado.
@@ -24,9 +24,12 @@ Un dashboard interactivo que visualiza datos en tiempo real de criptomonedas uti
    npm run dev
    ```
 
-## Capturas de Pantalla
+## 🚀 Demostración en Vivo
 
-*(Nota para el usuario: Guarda las capturas de imagen de tu dashboard en la carpeta `public/screenshots` con los nombres indicados abajo, una vez lo subas a GitHub)*
+Puedes ver el proyecto desplegado y funcionando aquí:  
+[**Ver Demo en Vivo en Vercel**](https://dinametra-dashborad.vercel.app?_vercel_share=o4lbQpmGMzLbQCrwvyHhiR4BDt2OoeAD)
+
+## Capturas de Pantalla
 
 - ![Carga Inicial](./public/screenshots/1-carga-inicial.png)
 - ![Filtros Aplicados](./public/screenshots/2-filtros.png)
@@ -47,5 +50,5 @@ npm run test
 - **Herramientas Modernas**: Vite sobre React para rapidez al codificar, renderizado responsivo con **Tailwind CSS v4** mediante clases utilitarias aplicando *Glassmorphism*, y reemplazo del entorno antiguo de Jest por **Vitest + React Testing Library** interactuando directamente sobre simulaciones del DOM de usuario.
 
 ## Posibles Mejoras a Futuro
-- Manejar la paginación para expandir infinitamente la cantidad de datos que provee la API libre de CoinGecko de forma optimizada.
+- Manejar la paginación para expandir infinitamente la cantidad de datos que provee la API libre de CoinLore de forma optimizada.
 - Internacionalización (i18n).
